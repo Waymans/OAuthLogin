@@ -1,9 +1,7 @@
-var express = require('express');
-var passport = require('passport');
-var Strategy = require('passport-github').Strategy;
+const express = require('express');
+const passport = require('passport');
+const Strategy = require('passport-github').Strategy;
 const pug = require('pug');
-//const compiledFunction = pug.compileFile('./views/home.pug');
-
 
 passport.use(new Strategy({
     clientID: process.env.GITHUB_CLIENT_ID,
@@ -22,7 +20,7 @@ passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 
-var app = express();
+const app = express();
 
 app.use(express.static(process.cwd() + '/public'));
 app.set('views', __dirname + '/views');
@@ -42,7 +40,7 @@ app.get('/',(req, res) => {
 
 app.get('/login/github',passport.authenticate('github'));
 
-app.get('/login/github/return', passport.authenticate('github', { failureRedirect: '/home' }),(req, res) => {
+app.get('/login/github/return', passport.authenticate('github', { failureRedirect: '/' }),(req, res) => {
   res.redirect('/');
 });
 
