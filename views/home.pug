@@ -1,0 +1,13 @@
+doctype html
+head
+  title Home
+  include head.pug
+body.container.text-center.bg-gray
+  if user
+    h1 Welcome, #{user.username}! Please visit your 
+      a(href='/profile') profile
+      | .
+  else
+    h1 Welcome!
+    a.button.bg-black(href='/login/github')
+      |  Log in with GitHub
