@@ -1,0 +1,36 @@
+doctype html
+head
+  title Profile
+  include head.pug
+body.container.text-center.bg-gray
+  h1 Welcome, #{user.username}!
+  a(href='/') Home
+  br
+  img(src=user.photos[0].value, alt='user avatar')
+  br
+  a(href='/log') Logout
+  p
+  if user.displayName && user.emails
+    | Name: #{user.displayName}
+    br
+    | Email: #{user.emails[0].value}
+    br
+    | URL: 
+    - var url = user.profileUrl;
+      a(href=url, target="_blank") #{user.profileUrl}
+  else if user.displayName
+    | Name: #{user.displayName}
+    br
+    | URL: 
+    - var url = user.profileUrl;
+      a(href=url, target="_blank") #{user.profileUrl}
+  else if user.emails
+    | Email: #{user.emails[0].value}
+    br
+    | URL: 
+    - var url = user.profileUrl;
+      a(href=url, target="_blank") #{user.profileUrl}
+  else
+    | URL: 
+    - var url = user.profileUrl;
+      a(href=url, target="_blank") #{user.profileUrl}

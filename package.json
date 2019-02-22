@@ -1,0 +1,32 @@
+{
+  "name": "Login",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, using passport and pug for OAuth.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "morgan": "^1.9.1",
+    "body-parser": "^1.18.3",
+    "express-session": "^1.15.6",
+    "cookie-parser": "^1.4.4",
+    "connect-ensure-login": "^0.1.1"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/beautiful-sky"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
