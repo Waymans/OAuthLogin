@@ -1,3 +1,2 @@
-# Basic login/logout setup.
-## GitHub OAuth
-\ ゜o゜)ノ
+# Login/logout setup 
+## GitHub OAuth and local

@@ -1,0 +1,12 @@
+button#login.button.bg-black.full Log In Manually
+#mod2.modal
+  form.modal-content.animate.padding(action='/login/local', method='get')
+    label.text-left(for='username')
+      b Username
+    input.full(type='text', placeholder='Enter Username', name='username', required)
+    label.text-left(for='password')
+      b Password
+    input.full(type='password', placeholder='Enter Password', name='password', required)
+    .clearfix
+      button#cancel2.button.bg-red.square.float-left.partial(type='button') Cancel
+      button.button.bg-green.square.float-left.partial(type='submit') Login

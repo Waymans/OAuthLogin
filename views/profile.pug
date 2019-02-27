@@ -1,36 +1,24 @@
-doctype html
-head
-  title Profile
-  include head.pug
+- var title = 'Profile';
+include pug/head.pug
 body.container.text-center.bg-gray
   h1 Welcome, #{user.username}!
   a(href='/') Home
   br
-  img(src=user.photos[0].value, alt='user avatar')
-  br
   a(href='/log') Logout
-  p
-  if user.displayName && user.emails
-    | Name: #{user.displayName}
+  if user.photos
     br
-    | Email: #{user.emails[0].value}
+    img(src=user.photos[0].value, alt='user avatar')
     br
+    p
+    if user.displayName
+      | Name: #{user.displayName}
+      br
+    if user.emails
+      | Email: #{user.emails[0].value}
+      br
     | URL: 
     - var url = user.profileUrl;
-      a(href=url, target="_blank") #{user.profileUrl}
-  else if user.displayName
-    | Name: #{user.displayName}
-    br
-    | URL: 
-    - var url = user.profileUrl;
-      a(href=url, target="_blank") #{user.profileUrl}
-  else if user.emails
-    | Email: #{user.emails[0].value}
-    br
-    | URL: 
-    - var url = user.profileUrl;
-      a(href=url, target="_blank") #{user.profileUrl}
+    a(href=url, target="_blank") #{user.profileUrl}
   else
-    | URL: 
-    - var url = user.profileUrl;
-      a(href=url, target="_blank") #{user.profileUrl}
+    p
+    | Hmm, what should I put here, #{user.username}?

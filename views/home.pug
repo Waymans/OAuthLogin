@@ -1,7 +1,5 @@
-doctype html
-head
-  title Home
-  include head.pug
+- var title = 'Home';
+include pug/head.pug
 body.container.text-center.bg-gray
   if user
     h1 Welcome, #{user.username}! Please visit your 
@@ -9,5 +7,13 @@ body.container.text-center.bg-gray
       | .
   else
     h1 Welcome!
-    a.button.bg-black(href='/login/github')
-      |  Log in with GitHub
+    p This is a sample app that demonstrates authentication locally and for GitHub.
+    .col
+      a.button.full.bg-black(href='/login/github')
+        i.fa.fa-github.fa-fw
+        |  Log in with GitHub
+      include modal/login
+      .line.relative
+        span.line-text or
+      include modal/sign-up
+  script(src="/index.js")
