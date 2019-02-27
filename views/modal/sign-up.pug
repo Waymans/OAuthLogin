@@ -1,0 +1,20 @@
+button#modal.button.bg-navy.full Sign Up
+#mod.modal
+  form#sign-up.modal-content.animate.padding(action='/sign-up', method='post')
+    h1 Sign Up
+    p Please fill in this form to create an account.
+    hr
+    label.text-left(for='username')
+      b Username
+    input#user.full(type='text', placeholder='Enter Username', name='username', required)
+    #messU.text-red
+    label.text-left(for='password')
+      b Password
+    input#pass1.full(type='password', placeholder='Enter Password', name='password', required)
+    label.text-left(for='password-conf')
+      b Confirm Password
+    input#pass2.full(type='password', placeholder='Repeat Password', name='password-conf', required)
+    #messP
+    .clearfix
+      button#cancel.button.bg-red.partial.float-left.square(type='button') Cancel
+      button#sub.button.bg-green.partial.float-left.square(type='submit', disabled) Sign Up
